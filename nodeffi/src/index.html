@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Your screen resolution:</h1>
+    <span id="width"></span>x<span id="height"></span>
+  </body>
+  <script>
+    var winapi = require('./winapi').default;
+    var screenRes = winapi.getScreenResolution();
+    document.getElementById("height").innerText = screenRes.height;
+    document.getElementById("width").innerText = screenRes.width;
+    console.log(screenRes);
+  </script>
+</html>

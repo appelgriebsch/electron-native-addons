@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Well hey there!!!
+    <p id='result'></p>
+    <p id='osversion'></p>
+  </body>
+  <script>
+    var dotNet = require('./dotNet');
+    console.log(dotNet);
+    dotNet.helloWorld('Electron App', (error, result) => {
+      console.log(result);
+      document.getElementById('result').innerText = result;
+    });
+    dotNet.osVersion(null, (error, result) => {
+      console.log(result);
+      document.getElementById('osversion').innerText = result;
+    });
+  </script>
+</html>
